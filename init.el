@@ -80,7 +80,7 @@
 (require 'init-frame-hooks)
 ;; any file use flyspell should be initialized after init-spelling.el
 ;; actually, I don't know which major-mode use flyspell.
-(require 'init-spelling)
+;;(require 'init-spelling)
 (require 'init-xterm)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
@@ -129,7 +129,7 @@
 (require 'init-moz)
 (require 'init-gtags)
 ;; use evil mode (vi key binding)
-(require 'init-evil)
+;;(require 'init-evil)
 (require 'init-sh)
 (require 'init-ctags)
 (require 'init-ace-jump-mode)
