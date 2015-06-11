@@ -89,6 +89,12 @@ ARCHIVE is the string name of the package archive.")
 ;; this is just hack to work around *emacs23* issues
 (if (not *emacs24*) (add-to-list 'package-archives '("localelpa" . "~/.emacs.d/localelpa")))
 
+;;(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives
+  '("marmalade" . "http://marmalade-repo.org/packages/"))
+
 ;; Or Un-comment below line if you prefer installing package from https://github.com/redguardtoo/myelpa/ directly
 ;; (setq package-archives '(("myelpa" . "https://raw.github.com/redguardtoo/myelpa/master/")))
 
@@ -331,7 +337,13 @@ ARCHIVE is the string name of the package archive.")
   (require-package 'company-anaconda))
 
 (require-package 'quack) ;; for scheme
-
+;; for clojure
+(require-package 'queue)
+(require-package 'cider)
+(require-package 'clojure-mode)
+;;(require-package 'clojure-test-mode)
+(require-package 'ac-nrepl)
+(require-package 'paredit)
 ;; (require-package 'command-frequency)
 
 (provide 'init-elpa)
